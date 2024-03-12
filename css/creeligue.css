@@ -14,10 +14,17 @@ form {
   border-radius: 10px;
   min-width: 300px;
 }
+
 form h1{
   color: #7b2be2;
   text-align:center;
 }
+
+form h3{
+  color: red;
+  text-align:center;
+}
+
 form p.choose-email{
   text-align:center;
 }
@@ -25,7 +32,8 @@ form .inputs {
   display: flex;
   flex-direction: column;
 }
-form .inputs input[type='text']{
+
+form .inputs input[type='text'], input[type='password']{
   padding: 15px;
   border:none;
   border-radius: 5px;
@@ -33,6 +41,7 @@ form .inputs input[type='text']{
   outline:none;
   margin-bottom: 15px;
 }
+
 form p.inscription{
   font-size: 14px;
   margin-bottom: 20px;
