@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CROSL</title>
-  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/creemodif.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
 </head>
 <body>
@@ -30,12 +30,11 @@ if ($token){
 }
 ?>
     <form>
-     
-        <h1>M2L CROSL</h1>
+        <h1>Prestation</h1>
         <div align="center">
-            <button type="submit" formaction="creeoumodif.php" formmethod="post">Ligue</button>
-            <button type="submit" formaction="creeoumodifpresta.php" formmethod="post">Prestation</button>
-            <button type="submit" formaction="choixfacture.php" formmethod="post">Facture</button>
+            <button type="submit" formaction="creepresta.php" formmethod="post">Créer</button>
+            <button type="submit" formaction="modifierpresta.php" formmethod="post">Modifier</button>
+            <button type="submit" formaction="choix.php" formmethod="post">Retour</button>
         </div>
       </form>
 </body>

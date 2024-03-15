@@ -30,12 +30,11 @@ if ($token){
 }
 ?>
     <form>
-     
-        <h1>M2L CROSL</h1>
+        <h1>Facture</h1>
         <div align="center">
-            <button type="submit" formaction="creeoumodif.php" formmethod="post">Ligue</button>
-            <button type="submit" formaction="creeoumodifpresta.php" formmethod="post">Prestation</button>
-            <button type="submit" formaction="choixfacture.php" formmethod="post">Facture</button>
+            <button type="submit" formaction="creefacture.php" formmethod="post">Créer</button>
+            <button type="submit" formaction="consulterfacture.php" formmethod="post">Consulter</button>
+            <button type="submit" formaction="choix.php" formmethod="post">Retour</button>
         </div>
       </form>
 </body>
