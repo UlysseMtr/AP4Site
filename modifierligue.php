@@ -12,8 +12,8 @@
 $servername = "localhost";
 $username = "root";
 $password = "password";
-
 $connexion = new PDO("mysql:host=$servername;dbname=M2L", $username, $password);
+
 
 $id = $_COOKIE['id'];
 $token = $_COOKIE['token'];
@@ -29,18 +29,29 @@ if ($token){
     header("Location: error.php");
 }
 ?>
-  <form>
+  <form method="post" action="modification.php">
     <h1>Modifier une ligue</h1>
-    <div class="inputs">
-      <input type="text" placeholder="Nom trésorier" />
-      <input type="text" placeholder="Sport">
-      <input type="text" placeholder="Adresse">
-      <input type="text" placeholder="Code Postal">
-      <input type="text" placeholder="Ville">
-    </div>
-    <div align="center">
-      <button type="submit">Créer</button>
-    </div>
+      <div class="inputs">
+          <label for="nom_ligue">Choisir une ligue :</label>
+          <select id="nom_ligue" name="nom_ligue">
+              <?php
+              try {
+                  // Récupérer les noms et identifiants des ligues
+                  $query = "SELECT codeclient, ligue FROM Ligue";
+                  $stmt = $connexion->query($query);
+                  while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                      echo "<option value='" . $row['id_ligue'] . "'>" . $row['codeclient'] . " - " . $row['ligue'] . "</option>";
+                  }
+              } catch (PDOException $e) {
+                  echo 'Échec de la connexion à la base de données : ' . $e->getMessage();
+                  exit();
+              }
+              ?>
+          </select>
+      </div>
+      <div align="center">
+          <button type="submit">Modifier</button>
+      </div>
   </form>
 </body>
 </html>

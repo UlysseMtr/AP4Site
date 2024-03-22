@@ -16,8 +16,8 @@
     $connexion = new PDO("mysql:host=$servername;dbname=M2L", $username, $password);
 
     if ($_SERVER["REQUEST_METHOD"] == "POST"){
-            $id = $_POST['id'];
-            $mdp = $_POST['mdp'];
+            $id = htmlentities($_POST['id']);
+            $mdp = htmlentities($_POST['mdp']);
             // Vérifiez que les données rentrées ne sont pas vide
             if ($id != "" && $mdp != ""){
                 // Création d'un token aléatoire
