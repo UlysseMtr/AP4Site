@@ -1,8 +1,5 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "password";
-$connexion = new PDO("mysql:host=$servername;dbname=M2L", $username, $password);
+require("connexion.php");
 
 // Vérifier si le formulaire a été soumis
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -33,9 +30,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Exécuter la requête
             $stmt->execute();
-
-            echo "Ligue is updated";
-            exit();
+            ?><form>
+            <div class="inputs">
+            </div>
+            <div align="center">
+                <button type="submit" formaction="creeoumodif.php" formmethod="post">Retour</button>
+            </div>
+            </form>
+            </body>
+            </html>
+<?php
+exit();
         } catch (PDOException $e) {
             echo "Erreur lors de la mise à jour de la ligue : " . $e->getMessage();
         }

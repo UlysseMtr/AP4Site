@@ -9,7 +9,6 @@
 </head>
 <body>
     <?php
-
     require("connexion.php");
 
     if ($_SERVER["REQUEST_METHOD"] == "POST"){

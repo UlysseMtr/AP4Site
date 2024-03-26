@@ -9,11 +9,7 @@
 </head>
 <body>
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "password";
-$connexion = new PDO("mysql:host=$servername;dbname=M2L", $username, $password);
-
+require("connexion.php");
 
 $id = $_COOKIE['id'];
 $token = $_COOKIE['token'];
