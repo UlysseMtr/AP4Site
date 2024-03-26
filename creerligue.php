@@ -49,16 +49,7 @@ try {
 $id = $_COOKIE['id'];
 $token = $_COOKIE['token'];
 
-if ($token){
-    $req = $connexion->query("SELECT * FROM compteadmin WHERE id = '$id' AND token = '$token'");
-    $rep = $req->fetch();
-
-    if ($rep['pseudo'] != false){
-        echo "Vous êtes bien connecté ".$rep['pseudo']." !";
-    }
-}else{
-    header("Location: error.php");
-}
+require("token.php");
 ?>
   <form method="post" action="creerligue.php">
 

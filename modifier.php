@@ -1,6 +1,8 @@
 <?php
 require("connexion.php");
-
+$id = $_COOKIE['id'];
+$token = $_COOKIE['token'];
+require("token.php");
 // Vérifier si le formulaire a été soumis
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Vérifier si l'ID de la ligue a été transmis
@@ -30,6 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Exécuter la requête
             $stmt->execute();
+
             ?><form>
             <div class="inputs">
             </div>
