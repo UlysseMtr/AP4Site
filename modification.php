@@ -29,17 +29,17 @@ if ($token){
     header("Location: error.php");
 }
 ?>
-<form method="post" action="creerligue.php">
+<form method="post" action="modifier.php">
     <h1>Modifier une ligue</h1>
     <div class="inputs">
         <?php
 
+
         // Vérifier si le formulaire a été soumis
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Vérifier si l'ID de la ligue a été transmis
-            if (isset($_POST['nom_ligue'])) {
-                $id_ligue = $_POST['nom_ligue'];
-
+            if (isset($_POST['id_ligue'])) {
+                $id_ligue = $_POST['id_ligue'];
 
                 try {
                     // Récupérer les détails de la ligue sélectionnée
@@ -51,14 +51,18 @@ if ($token){
 
                     // Afficher le formulaire pré-rempli pour modifier la ligue
                     if ($resultat) {
-                        echo "<h2>Modifier une ligue</h2>";
-                        echo "<form method='post' action='traiter_modification_ligue.php'>";
-                        echo "<label>Nom de la ligue :</label> <input type='text' name='nom' value='" . $resultat['nom'] . "'><br>";
-                        echo "<label>Description :</label> <input type='text' name='description' value='" . $resultat['description'] . "'><br>";
-                        // Ajoutez d'autres champs si nécessaire
+                        echo "<form method='post' action='modifier.php'>";
+                        echo "<label>Nom de la Ligue :</label> <input type='text' name='description' value='" . $resultat['ligue'] . "'><br>";
+                        echo "<label>Nom du trésorier :</label> <input type='text' name='nom' value='" . $resultat['nom'] . "'><br>";
+                        echo "<label>Adresse :</label> <input type='text' name='adresse' value='" . $resultat['adresse'] . "'><br>";
+                        echo "<label>Sport :</label> <input type='text' name='sport' value='" . $resultat['sport'] . "'><br>";
+                        echo "<label>Recevoir les factures ? :</label> <input type='checkbox' name='recevoir' " . ($resultat['recevoir'] ? 'checked' : '') . "><br>";
                         echo "<input type='hidden' name='id_ligue' value='" . $id_ligue . "'>";
                         echo "<button type='submit'>Enregistrer les modifications</button>";
                         echo "</form>";
+
+                        ;
+
                     } else {
                         echo "Ligue non trouvée.";
                     }
@@ -70,13 +74,12 @@ if ($token){
                 echo "ID de la ligue non spécifié.";
             }
         }
-        var_dump($id_ligue);
 
         ?>
 
     </div>
     <div align="center">
-        <button type="submit">Modifier</button>
+        <!--- <button type="submit">Modifier</button> --!>
     </div>
 </form>
 </body>

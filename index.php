@@ -9,11 +9,8 @@
 </head>
 <body>
     <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "password";
 
-    $connexion = new PDO("mysql:host=$servername;dbname=M2L", $username, $password);
+    require("connexion.php");
 
     if ($_SERVER["REQUEST_METHOD"] == "POST"){
             $id = htmlentities($_POST['id']);
@@ -40,7 +37,8 @@
             }
         }
     ?>
-<form method="POST" action="">
+<form method="POST" acti
+      on="">
 
     <h1>Page Admin</h1>
     <div class="inputs">

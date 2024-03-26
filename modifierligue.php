@@ -32,15 +32,15 @@ if ($token){
   <form method="post" action="modification.php">
     <h1>Modifier une ligue</h1>
       <div class="inputs">
-          <label for="nom_ligue">Choisir une ligue :</label>
-          <select id="nom_ligue" name="nom_ligue">
+          <label for="id_ligue">Choisir une ligue :</label>
+          <select id="id_ligue" name="id_ligue">
               <?php
               try {
                   // Récupérer les noms et identifiants des ligues
                   $query = "SELECT codeclient, ligue FROM Ligue";
                   $stmt = $connexion->query($query);
                   while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                      echo "<option value='" . $row['id_ligue'] . "'>" . $row['codeclient'] . " - " . $row['ligue'] . "</option>";
+                      echo "<option value='" . $row['codeclient'] . "'>" . $row['codeclient'] . " - " . $row['ligue'] . "</option>";
                   }
               } catch (PDOException $e) {
                   echo 'Échec de la connexion à la base de données : ' . $e->getMessage();

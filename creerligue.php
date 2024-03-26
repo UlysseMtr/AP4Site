@@ -21,9 +21,9 @@ $nom = $_POST['nom'];
 
 // Vérifier si la case recevoir a été cochée
 if (isset($_POST['recevoir']) && $_POST['recevoir'] == 'on') {
-    $active = true;
+    $active = 1;
 } else {
-    $active = false;
+    $active = 0;
 }
 
 
